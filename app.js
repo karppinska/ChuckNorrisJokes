@@ -30,6 +30,7 @@ submitButton.addEventListener('click', (e) => {
         xhr.onload = function() {
             if (this.status === 200) {
                 const jokes = JSON.parse(this.response).value;
+                jokesContainer.innerHTML = '';
                 jokes.forEach(element => {
                     jokesContainer.innerHTML += `<p class="lead">${element.joke}</p>`;
                 });
